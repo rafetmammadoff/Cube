@@ -1,0 +1,76 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .container{
+        width: 300px;
+        height: 300px;
+        perspective: 1800px;
+        perspective-origin:center;
+        .cube{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: translateY(-180px);
+            animation: rafet 5s linear infinite paused;
+            &:hover{
+                animation-play-state: running;
+            }
+            .cube-sceene{
+                width: 300px;
+                height: 300px;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 30px;
+                position: absolute;
+            }
+            .cube-sceene-front{
+                background-color: rgba(255,0,0,.5);
+                transform: translateZ(150px) translateY(50%);
+            }
+            .cube-sceene-back{
+                background-color: rgba(136, 35, 127, 0.5);
+                transform: translateY(50%) translateZ(-150px);
+
+            }
+            .cube-sceene-right{
+                background-color: rgba(22, 155, 67, 0.5);
+                transform: rotateY(90deg) translateZ(150px) translateY(50%);
+            }
+            .cube-sceene-left{
+                background-color: rgba(50, 23, 148, 0.5);
+                transform: rotateY(90deg) translateY(50%) translateZ(-150px);
+            }
+            .cube-sceene-top{
+                background-color: rgba(197, 209, 21, 0.5);
+                transform: rotateX(90deg);
+            }
+            .cube-sceene-bottom{
+                background-color: rgba(62, 145, 160, 0.5);
+                transform: rotateX(90deg) translateZ(-300px);
+            }
+        }
+    }
+}
+@keyframes rafet{
+    0%{
+        transform: rotateX(0deg) translateY(-180px);
+    }
+    25%{
+        transform: rotateY(180deg) translateY(-180px);
+    }
+    50%{
+        transform: rotateX(270deg) translateY(-180px);
+    }
+    75%{
+        transform: rotateY(180deg) translateY(-180px);
+    }
+    100%{
+        transform: rotateX(0deg) translateY(-180px);
+    }
+    
+}
